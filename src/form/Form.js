@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import FormRow from './FormRow';
+import './Form.css';
 
 class Form extends Component {
   //this.refs.nombreComponent.nombreMetodo
@@ -27,18 +28,19 @@ class Form extends Component {
   }
 
   render() {
-    return (<div>
-      <h2>Register</h2>
-      <form onSubmit={this.onSubmit}>
+    return (<div className="Form">
+      <form onSubmit={this.onSubmit} className="Form-form">
+        <h2 className="Form-title">Register</h2>
         <FormRow inputType="text" labelText="Name" ref="name" isRequired={true}/>
         <FormRow inputType="text" labelText="Last Name" ref="lastname" isRequired={true}/>
         <FormRow inputType="email" labelText="Email" ref="email" isRequired={true}/>
         <FormRow inputType="password" labelText="password" ref="password" isRequired={true}/>
         <FormRow inputType="password" labelText="Confirm password" ref="confirm_password" isRequired={true}/>
-        <button>Register</button>
-        <label>{this.state.labelLegend}</label>
+        <button className="Form-button">Register</button>
+        <label className="Form-labelLegend">{this.state.labelLegend}</label>
       </form>
     </div>);
+    //coment
   }
 }
 export default Form;
